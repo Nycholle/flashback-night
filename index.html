@@ -1,33 +1,58 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Flashback Night</title>
-    <link rel="stylesheet" href="estilo.css" />
-  </head>
-  <body>
-    <header>
-      <h1>🎸 Flashback Night 🎶</h1>
-      <p>Bem-vindo à noite mais nostálgica do ano!</p>
-    </header>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flashback Night</title>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+  <header class="topo">
+    <img src="https://raw.githubusercontent.com/Nycholle/flashback-night/main/FLASHBACK%20DO%20SITE/logo.png" alt="Logo Flashback Night" class="logo">
+    <h1>🎸 Flashback Night 🎤</h1>
+    <p class="slogan">A noite mais nostálgica do ano, com sabor, som e emoção!</p>
+  </header>
 
-    <section class="intro">
-      <img src="https://via.placeholder.com/800x400?text=Flashback+Night" alt="Imagem do evento">
-      <p>Faça seu pedido escaneando o QR Code da sua mesa.</p>
-    </section>
+  <section class="intro">
+    <img src="https://raw.githubusercontent.com/Nycholle/flashback-night/main/FLASHBACK%20DO%20SITE/banner.png" alt="Banner do Evento" class="banner">
+    <p class="texto-intro">Faça seu pedido escaneando o QR Code da sua mesa!</p>
+  </section>
 
-    <section class="cardapio">
-      <h2>🍽️ Cardápio</h2>
-      <ul>
-        <li><strong>Fish & Chips</strong> - Iscas de peixe empanadas com batatas rústicas</li>
-        <li><strong>Drink Bon Jovi</strong> - Whisky com gelo seco e Red Bull</li>
-        <li><strong>Petiscos do Rock</strong> - Mix de mini salgados clássicos</li>
-      </ul>
-    </section>
+  <section class="cardapio">
+    <h2>🎶 Cardápio Interativo</h2>
+    <ul>
+      <li class="item-drink" data-som="bonjovi.mp3">
+        <strong>Drink Bon Jovi</strong> – Whisky com gelo seco, Red Bull<br>
+        <em>Clique para ouvir 🎵</em>
+      </li>
+      <li class="item-drink" data-som="madonna.mp3">
+        <strong>Drink Madonna</strong> – Gin com alecrim, limão e gelo<br>
+        <em>Clique para ouvir 🎵</em>
+      </li>
+      <li>
+        <strong>Fish & Chips</strong> – Iscas de peixe empanadas + batatas rústicas
+      </li>
+      <li>
+        <strong>Petiscos do Rock</strong> – Mix de mini salgados clássicos
+      </li>
+      <li>
+        <strong>Porção Flash</strong> – Polenta com queijo na combuquinha + molho especial
+      </li>
+    </ul>
+  </section>
 
-    <footer>
-      <p>&copy; 2025 Delícias da Lu - Flashback Night</p>
-    </footer>
-  </body>
+  <footer>
+    <p>© 2025 Delícias da Lu - Flashback Night</p>
+  </footer>
+
+  <script>
+    // Efeito de som nos drinks
+    document.querySelectorAll(".item-drink").forEach(item => {
+      item.addEventListener("mouseenter", () => {
+        const audio = new Audio(item.getAttribute("data-som"));
+        audio.play();
+      });
+    });
+  </script>
+</body>
 </html>
